@@ -12,33 +12,6 @@ void setup(){
   
   desligaLeds();  //Configura o estado inicial dos leds
   
-  digitalWrite(DATA, 1);
-  pulso(CLOCK);
-  digitalWrite(DATA, 0);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(LATCH);
-  
-  delay(1000);
-  
-  digitalWrite(DATA, 0);
-  pulso(CLOCK);
-  digitalWrite(DATA, 1);
-  pulso(CLOCK);
-  digitalWrite(DATA, 0);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(CLOCK);
-  pulso(LATCH);
-  
 }
 
 void loop(){
