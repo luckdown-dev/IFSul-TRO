@@ -5,13 +5,13 @@
 void setup(){
   configuraPinos();
   desligaLeds();
-
-  for(int i=10; i<=20; i++){
-    desligaLeds();
-    exibeBitLSB(i);
-    delay(500);
-  }
-
+  
+  shiftOut(DATA, CLOCK, MSBFIRST, B11010111);
+  enviaPulso(LATCH);
+  delay(1000);
+  desligaLeds();
+  delay(250);
+  
 }
 
 void loop(){
@@ -19,12 +19,6 @@ void loop(){
 }
 
 // *--------* FUNÇÕES *--------* //
-
-void exibeBitLSB(int valor){
-  int estado = valor & 1;
-  shiftOut(DATA, CLOCK, MSBFIRST, estado);
-  enviaPulso(LATCH);
-}
 
 void configuraPinos(){
   pinMode(DATA, OUTPUT);
