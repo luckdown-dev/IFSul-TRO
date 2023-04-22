@@ -8,10 +8,10 @@ void setup(){
 
   for(int c=1; c<=5; c++){
     desligaLeds();
-    exibeDoisBits(228);
+    exibeBitMSB(228);
     delay(500);
     desligaLeds();
-    exibeDoisBits(125);
+    exibeBitMSB(125);
     delay(500);
   }
 
@@ -23,9 +23,9 @@ void loop(){
 
 // *--------* FUNÇÕES *--------* //
 
-void exibeDoisBits(int valor){
+void exibeBitMSB(int valor){
   int led = valor & 128;
-  shiftOut(DATA, CLOCK, MSBFIRST, led);
+  shiftOut(DATA, CLOCK, LSBFIRST, led);
   enviaPulso(LATCH);
 }
 
