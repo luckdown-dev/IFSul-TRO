@@ -28,7 +28,7 @@ void exibeDecimal(int valor){
     display = (valor - resto) / unidade;
     anterior = anterior + display;
 
-    if(resto!=0; anterior==0){
+    if(resto!=0 && anterior==0){
       vLetra[c] = B00000000;
     } else{
       vLetra[c] = vDigito[display];
