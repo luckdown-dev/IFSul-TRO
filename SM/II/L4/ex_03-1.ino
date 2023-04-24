@@ -13,9 +13,10 @@
 
 ShiftDisplay display7s(COMMON_CATHODE, 4);
 
-int vbotao_0 = 683, vbotao_1=755, vbotao_2=935;
 unsigned long ultimoRepique = 0;
-unsigned long repiqueDelay = 50; // delay do debounce
+unsigned long repiqueDelay = 50; // delay do repique
+
+int vbotao_0 = 683, vbotao_1=755, vbotao_2=935;
 
 void setup() {
   pinMode(botoes, INPUT);
@@ -25,7 +26,7 @@ void setup() {
 }
 
 void loop() {
-  int botao = leBotaoRepique(); // chamada da função de leitura com debounce
+  int botao = leBotaoRepique();
   if(botao == BOTAO_2){
     digitalWrite(vermelho, !digitalRead(vermelho));
     delay(300);
