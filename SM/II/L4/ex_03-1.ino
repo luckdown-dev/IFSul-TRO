@@ -59,11 +59,12 @@ int leBotao() {
 int leBotaoRepique() {
   int botaoLido = leBotao(); // leitura inicial do botão
   if (botaoLido != NAO_PRESSIONADO) { // se o botão foi pressionado
-    unsigned long tempoAtual = millis();
-    if (tempoAtual - ultimoRepique > repiqueDelay) { // debounce aplicado
-      ultimoRepique = tempoAtual; // atualiza o tempo do último debounce
+    unsigned long tempoAtual = millis(); // inicia um contador ao ser detecado um botao pressionado
+    if (tempoAtual - ultimoRepique > repiqueDelay) { // verifica se o intervalo entre o ultimo repique e o atual ultrapassou o valor definido para o delay
+      ultimoRepique = tempoAtual; // atualiza o tempo do último repique
       return botaoLido;
     }
+  } else {
+    return NAO_PRESSIONADO;
   }
-  return NAO_PRESSIONADO;
 }
