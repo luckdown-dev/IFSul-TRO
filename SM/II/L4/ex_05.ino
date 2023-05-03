@@ -17,10 +17,10 @@ ShiftRegister74HC595 leds(1, DATA_PIN, CLOCK_PIN, LATCH_PIN);
 int posicaoLed = 0;
 int sentido = 1; // 1 for clockwise, -1 for counterclockwise
 unsigned long tempoPassado = 0;
-const long intervalo = 150; // milliseconds
+const long intervalo = 100; // milliseconds
 
 void setup() {
-  sr.setAllLow();
+  leds.setAllLow();
   pinMode(BOTOES_PIN, INPUT);
 }
 
