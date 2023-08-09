@@ -13,7 +13,7 @@ public class Exemplo01
 		System.out.print("Informe o segundo valor: ");
 		numb2 = teclado.nextInt();
 		
-		soma = numb1+numb2;
+		soma = numb1 + numb2;
 		
 		System.out.print("O resultado e: " + soma);
 	}
